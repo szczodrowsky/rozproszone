@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dobra Morda</title>
+    <script defer src="bundle.js"></script>
+    <link rel="stylesheet" href="style-app.css" />
+  </head>
+  <body>
+    <header>
+        <div class="app-side">
+        <div class="navbar">
+          <p class="app-name">Dobra Morda</p>
+          <ul class="active-side">
+            <li>Strona Główna</li>
+            <li>Historia</li>
+          </ul>
+          <ul class="user-data">
+            <li>adam.szczodro@gamil.com</li>
+            <li><button class="log-out">Wyloguj się</button></li>
+          </ul>
+        </div>
+    </header>
+    <main>
+        <div class="new-photo">
+            <input type="file" id="inputImage" accept="image/*" />
+            <canvas
+              id="canvas"
+              class="picture-display"
+              onclick="handleCanvasClick()"
+            ></canvas>
+          </div>
+          <div class="photos-history hide"></div>
+        </div>
+    </main>
+  </body>
+</html>

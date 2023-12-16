@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="bundle.js"></script>
+    <title>Dobra morda</title>
+  </head>
+  <body>
+    <div class="choice-container">
+      <h1 class="tittle">Dobra Morda</h1>
+      <div class="buttons">
+        <button class="option1">Zarejestruj się</button>
+        <button class="option2">Zaloguj się</button>
+      </div>
+    </div>
+    <div class="registration-form hide">
+      <h2 class="tittle">Zarejestruj się</h2>
+      <div class="line"></div>
+      <form class="signupForm">
+        <div class="form-group">
+          <label class="form-label">Imię</label>
+          <input
+            type="text"
+            id="name"
+            name="registerName"
+            class="form-control"
+            required
+            placeholder="Wprowadź imię"
+          />
+        </div>
+        <div class="form-group">
+          <label class="form-label">E-mail</label>
+          <input
+            type="email"
+            id="registerEmail"
+            name="registerEmail"
+            class="form-control"
+            required
+            placeholder="Wprowadź email"
+          />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Hasło</label>
+          <input
+            type="password"
+            id="registerPassword"
+            name="registerPassword"
+            class="form-control"
+            required
+            placeholder="Wprowadź hasło"
+          />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Powtórz hasło</label>
+          <input
+            type="password"
+            id="confirm_password"
+            name="confirmPassword"
+            class="form-control"
+            required
+            placeholder="Powtórz hasło"
+          />
+        </div>
+        <div class="policy-agree">
+          <input type="checkbox" class="agree" required />
+          <p class="terms">
+            Zgadzam się na <span class="yellow">Warunki</span>
+          </p>
+        </div>
+        <button class="signup-btn">Zarejestruj się</button>
+      </form>
+      <div class="line"></div>
+      <div class="have-acc">
+        <p class="first-have">Masz już konto?</p>
+        <p class="second-have">Zaloguj się</p>
+      </div>
+    </div>
+    <div class="login-form hide">
+      <h3 class="tittle">Zaloguj się</h3>
+      <div class="line"></div>
+      <form class="loginForm">
+        <div class="form-group">
+          <label class="form-label">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="emailLogin"
+            class="form-control"
+            required
+            placeholder="Wprowadź email"
+          />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Hasło</label>
+          <input
+            type="password"
+            id="password"
+            name="passwordLogin"
+            class="form-control"
+            required
+            placeholder="Wprowadź hasło"
+          />
+        </div>
+        <div class="rememberMe">
+          <input type="checkbox" class="agree" />
+          <p class="terms">Zapamiętaj mnie</p>
+        </div>
+        <button class="register-btn" type="submit">Zaloguj się</button>
+      </form>
+      <div class="line"></div>
+      <div class="no-acc">
+        <p class="first-no">Nie masz jeszcze konta?</p>
+        <p class="second-no">Zarejestruj się</p>
+      </div>
+    </div>
+  </body>
+</html>
