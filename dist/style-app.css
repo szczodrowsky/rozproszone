@@ -122,8 +122,22 @@ li button {
   padding: 5rem;
   gap: 2rem;
 }
-
+.input-file {
+  border: none;
+  cursor: pointer;
+  border-radius: 0.3125rem;
+  background: rgba(255, 255, 0, 0.6);
+  color: #fff;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 1rem 1.5rem;
+}
 .picture-display {
-  width: 60rem;
+  width: 70rem;
   height: 40rem;
+  background-color: grey;
+  background-size: cover;
 }

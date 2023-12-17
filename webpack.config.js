@@ -2,10 +2,14 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: {
+    bundle: "./src/index.js",
+    app: "./src/app.js",
+    faceAPI: "./src/facejs",
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    filename: "[name].js",
   },
   watch: true,
 };

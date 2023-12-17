@@ -5,7 +5,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyCByEr4GYKkn318os-meSSZemJoon8bu7E",
   authDomain: "dobramorda-b0009.firebaseapp.com",
   projectId: "dobramorda-b0009",
@@ -36,6 +36,9 @@ signupForm.addEventListener("submit", (e) => {
     .then((cred) => {
       console.log("user created:", cred.user);
       signupForm.reset();
+      setTimeout(() => {
+        window.location.href = "app.html";
+      }, 100);
     })
     .catch((err) => {
       console.log(err.message);
@@ -54,6 +57,9 @@ logInForm.addEventListener("submit", (e) => {
     .then((cred) => {
       console.log("user logged in:", cred.user);
       logInForm.reset();
+      setTimeout(() => {
+        window.location.href = "app.html";
+      }, 100);
     })
     .catch((err) => {
       console.log(err.message);
@@ -90,10 +96,3 @@ noAccParagraf.addEventListener("click", () => {
 });
 
 //
-document.addEventListener("DOMContentLoaded", function () {
-  var body = document.body;
-  if (body.classList.contains("app-side-visible")) {
-    body.style.backgroundColor = "#f0f0f0";
-    body.style.color = "white";
-  }
-});
