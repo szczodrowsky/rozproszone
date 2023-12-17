@@ -177,7 +177,6 @@ li button:hover {
 }
 @media (max-width: 1350px) {
   .photos-history {
-    width: 80%;
     padding: 1rem;
   }
   .history {
