@@ -131,6 +131,9 @@ onAuthStateChanged(auth, (user) => {
     );
 
     history.addEventListener("click", () => {
+      // Wyczyść zawartość kontenera przed dodaniem nowych elementów
+      imageHistoryContainer.innerHTML = "";
+
       newPhotoPage.classList.add("hide");
       historyPage.classList.remove("hide");
 
@@ -181,7 +184,6 @@ onAuthStateChanged(auth, (user) => {
                         imageLink.style.color = "white";
                       });
                     })
-
                     .catch((error) => {
                       console.error(
                         "Błąd podczas pobierania URL obrazu:",

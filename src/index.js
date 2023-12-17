@@ -63,6 +63,8 @@ logInForm.addEventListener("submit", (e) => {
     })
     .catch((err) => {
       console.log(err.message);
+      alert("Nieudało sie zalogować spróbuj jeszcze raz");
+      logInForm.reset();
     });
 });
 
