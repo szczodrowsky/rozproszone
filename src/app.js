@@ -7,6 +7,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
+import { getStorage, ref, uploadBytes } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCByEr4GYKkn318os-meSSZemJoon8bu7E",
@@ -16,8 +17,10 @@ const firebaseConfig = {
   messagingSenderId: "992648302312",
   appId: "1:992648302312:web:57d04de0edafb633df435d",
 };
-const app = initializeApp(firebaseConfig);
+
+initializeApp(firebaseConfig);
 const auth = getAuth();
+const storage = getStorage();
 
 // API section //
 const inputImage = document.getElementById("inputImage");
@@ -37,7 +40,7 @@ function detectFaces(img) {
         ctx.drawImage(img, 0, 0, img.width, img.height);
         faceapi.draw.drawDetections(canvas, resizedDetections);
         faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
-
+        uploadImageToStorage(img, resizedDetections);
         console.log(resizedDetections);
       })
       .catch((error) => {
@@ -45,6 +48,32 @@ function detectFaces(img) {
       });
   });
 }
+
+function uploadImageToStorage(img, detections) {
+  const timestamp = new Date().toISOString();
+  const directoryName = `directory_${timestamp}`;
+  const imageName = `image_${timestamp}.png`;
+  const jsonName = `data_${timestamp}.json`;
+
+  const imageRef = ref(storage, `${directoryName}/${imageName}`);
+  const jsonRef = ref(storage, `${directoryName}/${jsonName}`);
+
+  canvas.toBlob((blob) => {
+    uploadBytes(imageRef, blob).then((imageSnapshot) => {
+      console.log("Obraz przesłany do Firebase Storage!");
+      const dataToSave = {
+        detections: detections,
+      };
+      const jsonString = JSON.stringify(dataToSave);
+      const jsonBlob = new Blob([jsonString], { type: "application/json" });
+
+      uploadBytes(jsonRef, jsonBlob).then((jsonSnapshot) => {
+        console.log("Plik JSON przesłany do Firebase Storage!");
+      });
+    });
+  }, "image/png");
+}
+
 inputImage.addEventListener("change", () => {
   const img = new Image();
   img.src = URL.createObjectURL(inputImage.files[0]);
@@ -69,6 +98,7 @@ logoutButton.addEventListener("click", () => {
       console.log(err.message);
     });
 });
+
 onAuthStateChanged(auth, (user) => {
   console.log("user status changed:", user);
   const logUser = document.getElementById("logUser");
