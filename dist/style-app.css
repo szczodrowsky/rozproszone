@@ -68,6 +68,14 @@ body {
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0px 8px 32px 0px rgba(31, 38, 135, 0.3);
 }
+@media (max-width: 1350px) {
+  .navbar {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+  }
+}
+
 .app-name {
   color: var(--White, #fff);
   text-align: center;
@@ -85,6 +93,13 @@ body {
   align-items: center;
   gap: 2rem;
   padding: 0;
+}
+
+@media (max-width: 1350px) {
+  .user-data {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
 }
 li {
   color: var(--White, #fff);
@@ -159,6 +174,19 @@ li button:hover {
   width: 45%;
   margin: 1rem auto;
   border-radius: 0.5rem;
+}
+@media (max-width: 1350px) {
+  .photos-history {
+    width: 80%;
+    padding: 1rem;
+  }
+  .history {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 .hide {
