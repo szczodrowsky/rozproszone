@@ -99,6 +99,10 @@ li {
 .active-side {
   cursor: pointer;
 }
+.active-side li:hover {
+  color: rgba(255, 255, 0, 0.6);
+}
+
 li button {
   border: none;
   background-color: transparent;
@@ -113,13 +117,17 @@ li button {
   cursor: pointer;
 }
 
+li button:hover {
+  color: rgba(255, 255, 0, 0.6);
+}
+
 .new-photo {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column-reverse;
   margin: auto 0;
-  padding: 5rem;
+  padding: 2.5rem;
   gap: 2rem;
 }
 .input-file {
@@ -140,4 +148,19 @@ li button {
   height: 40rem;
   background-color: grey;
   background-size: cover;
+}
+
+.photos-history {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7rem;
+  background-color: grey;
+  width: 45%;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+}
+
+.hide {
+  display: none;
 }

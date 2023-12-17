@@ -58,7 +58,7 @@ logInForm.addEventListener("submit", (e) => {
       console.log("user logged in:", cred.user);
       logInForm.reset();
       setTimeout(() => {
-        window.location.href = "app.html";
+        window.location.replace("app.html");
       }, 100);
     })
     .catch((err) => {

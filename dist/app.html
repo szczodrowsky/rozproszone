@@ -14,8 +14,8 @@
         <div class="navbar">
           <p class="app-name">Dobra Morda</p>
           <ul class="active-side">
-            <li>Strona Główna</li>
-            <li>Historia</li>
+            <li id="home">Strona Główna</li>
+            <li id="history">Historia</li>
           </ul>
           <ul class="user-data">
             <li><span id="logUser">email osoby zalogowanej</span></li>
@@ -31,7 +31,9 @@
               class="picture-display"
             ></canvas>
           </div>
-          <div class="photos-history hide"></div>
+          <div class="photos-history hide">
+            <div class="history" id="imageHistoryContainer"></div>
+          </div>
         </div>
     </main>
   </body>
